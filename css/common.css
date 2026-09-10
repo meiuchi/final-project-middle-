@@ -1,0 +1,598 @@
+@charset "UTF-8";
+
+/* ==========================================
+   リセット・共通ベース
+========================================== */
+body {
+  font-family: "Shippori Mincho", serif;
+  font-size: 16px;
+  font-style: normal;
+  color: #292929;
+  overflow-x: clip;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: lighter;
+  line-height: 2;
+  color: #F3EFE7;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 24px;
+  letter-spacing: 0.1em;
+  font-weight: 500;
+}
+
+p {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.1em;
+}
+
+/* ==========================================
+   見出し共通パーツ(全ページで使用)
+========================================== */
+.section-title {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h2.title-en {
+  color: #4A3B32;
+}
+
+.title-letter {
+  font-size: 50px;
+}
+
+.title-ja {
+  font-family: "Shippori Mincho", serif;
+}
+
+/* ==========================================
+   ヘッター
+========================================== */
+#head {
+  width: 100%;
+  background-color: rgb(74,59,50,0.5);
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+}
+
+.logo img {
+  width: 80px;
+  height: auto;
+  object-fit: cover;
+  margin-left: 40px;
+  vertical-align: bottom;
+}
+
+.area-nav {
+  margin-right: 80px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-list li {
+  font-family: "Shippori Mincho", serif;
+  font-size: 14px;
+  font-weight: normal;
+  letter-spacing: 0.1em;
+  color: #F3EFE7;
+}
+
+/* ナビゲーションホバーしたらいろ変わる */
+.nav-list a {
+  transition: color 0.3s ease;
+}
+
+.nav-list a:hover {
+  color: #426D7A; 
+}
+
+/* ハンバーガーメニューはSPのみ */
+.hamburger-menu,
+.hamburger-navigation {
+  display: none;
+}
+
+/* ==========================================
+   お問合せボタン２つ
+========================================== */
+.btn-area {
+  position: fixed;
+  top: 50%;
+  right: 0px;
+  transform: translateY(-50%) translateX(100%);
+  z-index: 80;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease;
+}
+
+/* メインビジュアルが過ぎたら出現 */
+.btn-area.is-visible {
+  transform: translateY(-50%) translateX(0);  /* 定位置にぬるっと出てくる */
+}
+
+button.cta-btn {
+  color: #B9684E;
+  background-color: #F3EFE7;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  border-radius: 5px;
+  border: 1px solid #B9684E;
+  padding: 40px 15px;
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+button.line-btn {
+  color: #426D7A;
+  background-color: #F3EFE7;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  border-radius: 5px;
+  border: 1px solid #426D7A;
+  padding: 40px 15px;
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+.cta-btn img,
+.line-btn img {
+  width: 20px;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* ボタンホバー時 */
+button.cta-btn:hover {
+  background-color: rgba(185, 104, 78, 0.9);
+  color: #F3EFE7;
+}
+
+button.line-btn:hover {
+  background-color: rgba(66, 109, 122, 0.9);
+  color: #F3EFE7;
+}
+
+.cta-btn img,
+.line-btn img {
+  transition: filter 0.8s ease;
+}
+
+button.cta-btn:hover img,
+button.line-btn:hover img {
+  filter: brightness(0) invert(1); /* 画像を白色に変換 */
+}
+
+/* ==========================================
+   フッターエリア
+========================================== */
+#foot {
+  width: 100%;
+  margin-top: 140px;
+  padding-top: 80px;
+  background-image: url(../images/footerBG.png);
+  background-size: cover;
+  position: relative;
+}
+
+.car-icon {
+  width: 100px;
+  position: absolute;
+  top: -6%;
+  left: 50%;
+}
+
+.car-icon img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.main-area {
+  width: 75%;
+  margin: 40px auto;
+  display: flex;
+  gap: 50px;
+}
+
+.logo-foot img {
+  width: 150px;
+  object-fit: cover;
+}
+
+.access-area {
+  color: #F3EFE7;
+}
+
+.access {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  line-height: 2;
+}
+
+.ig-area {
+  perspective: 400px;
+}
+
+.ig-area a {
+  display: flex;
+  gap: 17px;
+  margin-top: 25px;
+}
+
+.instagram-text {
+  font-family: "Shippori Mincho", serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+
+.ig-area img{
+  width: 25px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.ig-area:hover .instagram-text {
+  transform: rotateX(360deg);
+}
+
+.site-map {
+  margin-left: auto;
+  display: flex;
+}
+
+p.site-title {
+  color: #F3EFE7;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  margin-right: -7px;
+  margin-bottom: 60px;
+}
+
+.sitemap-list {
+  color: #F3EFE7;
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  border-left: 1px solid #F3EFE7;
+  padding-left: 15px;
+  text-align: start;
+}
+
+.sitemap-list th {
+  padding-right: 30px;
+}
+
+.sitemap-list th,
+.sitemap-list td {
+  padding-bottom: 10px;
+  font-weight: lighter;
+  text-align: left;
+}
+
+.credit {
+  width: 100%;
+  height: 40px;
+  font-family: "avenir-lt-pro", sans-serif;
+  font-size: 10px;
+  font-weight: lighter;
+  letter-spacing: 0.08em;
+  padding: 15px 15px 15px 50px; 
+  background-color: #F3EFE7; 
+}
+
+/* サイトマップホバーアニメーション */
+.sitemap-list a {
+  position: relative;
+  color: #F3EFE7;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.sitemap-list a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 0.5px;
+  background-color: #F3EFE7;
+  transition: width 0.3s ease;
+}
+
+.sitemap-list a:hover::after {
+  content: "";
+  width: 100%;
+}
+
+/* ==========================================
+   汎用の演出・ユーティリティ
+========================================== */
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sp-only { display: none; }
+.pc-only { display: block; }
+
+
+/* SP対応（画面幅 768px 以下） */
+@media (max-width: 768px) {
+  .area-nav {
+    display: none;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .title-letter {
+    font-size: 30px;
+  }
+
+  /* ==========================================
+    ハンバーガーボタン
+  ========================================== */
+  .hamburger-menu {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #F3EFE7;
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0; 
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+  }
+
+  .hamburger-menu:hover span {
+    opacity: 0.5;
+  }
+
+  /* スクロール時（.is-show 付与時）に表示 */
+  .hamburger-menu.is-show {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  span.hamburger-line {
+    background-color: #4A3B32;
+    width: 30px;
+    height: 1px;
+    position: absolute;
+    left: 15px;
+    transition: transform 0.4s ease, opacity 0.4s ease, background-color 0.4s ease;
+  }
+
+  span.hamburger-text {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 8px;
+    letter-spacing: 0.1em;
+    color: #4A3B32;
+    white-space: nowrap;
+  }
+
+  .hamburger-menu span:nth-child(1) { top: 20px; }
+  .hamburger-menu span:nth-child(2) { top: 29px; }
+
+  .hamburger-menu.active span:nth-child(1) {
+    top: 29px;
+    transform: rotate(135deg);
+  }
+
+  .hamburger-menu.active span:nth-child(2) {
+    top: 29px;
+    transform: rotate(-135deg);
+  }
+
+  /* ハンバーガーナビゲーション */
+  .hamburger-navigation {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background-color: rgba(74, 59, 50, 0.9);
+    position: fixed;
+    top: 0;
+    left: 0; 
+    z-index: 999;
+    clip-path: circle(0% at 90% 5%); /* ボタンの位置(右上)を起点に、半径0%で見えない状態 */
+    transition: clip-path 0.8s ease-in-out;
+    transform: none; /* translateYはもう使わないので解除 */
+  }
+
+  .hamburger-navigation.active {
+    clip-path: circle(150% at 90% 5%); /* 画面全体を覆うくらいまで広がる */
+  }
+
+  .navigation-wrap {
+    width: 55%;
+    margin: 0 auto;
+  }
+
+  .nav-list-sp {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 100px;
+  }
+
+  .nav-list-sp li {
+    letter-spacing: 0.1em;
+    color: #F3EFE7;
+    transition: opacity 0.4s ease;
+  }
+
+  .nav-list-sp li:hover {
+    opacity: 0.5;
+  }
+
+  .nav-ja {
+    font-size: 12px;
+    margin-left: 20px;
+  }
+
+  .nav-line {
+    background-color: #F3EFE7;
+    width: 100px;
+    height: 1px;
+    display: inline-block;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .btn-area-sp {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .cta-btn-sp,
+  .line-btn-sp {
+    width: 80%;
+    color:#F3EFE7;
+    border-radius: 5px;
+    border: 1px solid #F3EFE7;
+    padding: 10px 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-family: "hiragino-kaku-gothic-pron", sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    transition: background-color 0.6s ease, color 0.6s ease;
+  }
+
+  .cta-btn-sp img,
+  .line-btn-sp img {
+    width: 20px;
+    object-fit: cover;
+    vertical-align: bottom;
+    margin-right: 10px;
+    transition: filter 0.6s ease;
+  }
+
+  .cta-btn-sp:hover,
+  .line-btn-sp:hover {
+    background-color: #F3EFE7;
+    color: #4A3B32; /* ナビゲーションの背景色(こげ茶)に合わせて反転 */
+  }
+
+  .cta-btn-sp:hover img,
+  .line-btn-sp:hover img {
+    filter: brightness(0) saturate(100%) invert(23%) sepia(11%) saturate(1352%) hue-rotate(11deg) brightness(94%) contrast(90%);
+  }
+
+  .sns-icon {
+    margin-top: 50px;
+    color: #F3EFE7;
+    transition: background-color 0.6s ease, color 0.6s ease;
+  }
+
+  .sns-icon:hover {
+    opacity: 0.5;
+  }
+
+  .sns-icon img {
+    width: 20px;
+    object-fit: cover;
+    margin-right: 5px;
+    vertical-align: bottom;
+  }
+
+  /* お問合せボタン下部に固定 */
+  .btn-area {
+    top: auto;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    flex-direction: row; /* 縦並び→横並びに */
+    width: 100%;
+    transform: translateY(100%); /* 下から出てくる形に変更 */
+  }
+
+  .btn-area.is-visible {
+    transform: translateY(0); /* 定位置(下端)に出現 */
+  }
+
+  button.cta-btn,
+  button.line-btn {
+    writing-mode: horizontal-tb; /* 縦書き→横書きに */
+    flex: 1; /* 2つのボタンで幅を半分ずつ */
+    padding: 15px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 0; /* 画面端にピタッと固定するので角丸は無しに */
+  }
+
+  .cta-btn img,
+  .line-btn img {
+    width: 18px;
+  }
+
+  /* フッターエリア */
+  #foot {
+    margin-top: 100px;
+  }
+
+  .car-icon {
+    top: -1%;
+  }
+
+  .site-map,
+  .ig-area,
+  .logo-foot {
+    display: none;
+  }
+}

@@ -1,0 +1,774 @@
+@charset "UTF-8";
+
+/* ==========================================
+   ファーストビューの写真
+========================================== */
+.mainvisual {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../images/FV.jpeg);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  z-index: 0;
+}
+
+.mainvisual-spacer {
+  height: 100vh;
+}
+
+.mainvisual::before {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.2);
+  z-index: 0;
+}
+
+.title {
+  position: absolute;
+  z-index: 2;
+  top: 60%;
+  left: 15%;
+  transform: translateY(-60%);
+}
+
+/* h１の文字アニメーション */
+.char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: char-fade-up 0.6s ease forwards;
+  animation-delay: calc(var(--i) * 0.08s);  /* 1文字ごとに0.08秒ずつずらす */
+}
+
+@keyframes char-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fv-line {
+  display: inline-block;
+  background: #F3EFE7;
+  width: 90px;
+  height: 1px;
+  margin: 30px 0px;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fade-up 0.6s ease forwards;
+  animation-delay: 1.4s;  /* h1が出終わった後くらいから */
+}
+
+.fv-subtitle {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  font-weight: lighter;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 2;
+  letter-spacing: 0.1em;
+  color: #F3EFE7;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: fade-up 0.6s ease forwards;
+  animation-delay: 1.6s;  /* lineの少し後 */
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* スクロールダウン */
+.scroll-indicator {
+  position: absolute;
+  bottom: 0px;
+  right: 12.5%;
+  z-index: 2;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.scroll-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: "Shippori Mincho", serif;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  color: #F3EFE7;
+}
+
+.scroll-line {
+  position: relative;
+  width: 1px;
+  height: 120px;
+  background-color: rgba(243, 239, 231, 0.4);
+}
+
+.scroll-dot {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #F3EFE7;
+  transform: translateX(-50%);
+  animation: dot-move 2s ease-in-out infinite;
+}
+
+@keyframes dot-move {
+  0% {
+    top: 0;
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    top: 90%;
+    opacity: 0;
+  }
+}
+
+/* セクション全体を覆う箇所 */
+.section-wrap {
+  position: relative;
+  z-index: 1;
+  background-color: #F3EFE7;
+  border-radius: 34px 34px 0 0;
+  box-shadow: 0 -20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   コンセプトエリア
+========================================== */
+#concept {
+  padding-top: 140px;
+  z-index: 2;
+}
+
+.concept-container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+/* viewmoreボタン */
+button.vm-btn {
+  color: #426D7A;
+  border-radius: 30px;
+  border: 1px solid #426D7A;
+  padding: 10px 25px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.vm-btn img {
+  width: 60px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+/* ホバーしたら車動く */
+.vm-btn:hover img {
+  transform: translateX(6px);
+}
+
+.concept-area {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+.concept-text {
+  width: 50%;
+}
+
+.concept-detail {
+  margin-top: 30px;
+}
+
+.highlight {
+  font-family: "Shippori Mincho", serif;
+  font-size: 24px;
+  line-height: 2;
+  background: linear-gradient(90deg, #4A3B32 0%, #B08C77 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.concept-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* ==========================================
+   サービスエリア
+========================================== */
+#service {
+  margin-top: 120px;
+  background-color: rgb(74,59,50,0.5);
+  padding-top: 100px;
+  padding-bottom: 120px;
+}
+
+.title-container {
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
+p.title-detail {
+  width: 40%;
+}
+
+p.svc {
+  color: #F3EFE7;
+}
+
+.servise-type-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+.servise-type {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: max-content;
+  animation: scroll-left 25s linear infinite;
+}
+
+.servise-type:hover {
+  animation-play-state: paused;
+}
+
+.card-servicetype {
+  position: relative;
+  flex-shrink: 0;
+}
+
+@keyframes scroll-left {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.card-servicetype::before {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(74,59,50,0.4);
+  z-index: 0;
+  transition: background-color 0.3s ease;
+}
+
+/* ホバーしたら茶色濃くする */
+.card-servicetype:hover::before {
+  background-color: rgb(74,59,50,0.8);
+}
+
+.card-servicetype:hover .service-detail {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card-servicetype img {
+  border-radius: 5px;
+  width: 300px;
+  height: 500px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+.card-text {
+  width: 60%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.card-line {
+  display: inline-block;
+  width: 90px;
+  height: 1px;
+  background-color: #F3EFE7;
+  margin: 30px auto;
+}
+
+.service-title {
+  font-size: 32px;
+}
+
+.card-text,
+.service-detail {
+  color: #F3EFE7;
+  text-align: center;
+}
+
+.service-detail {
+  transform: translateY(20px);
+  opacity: 0;
+  transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+/* ==========================================
+   ワークスエリア
+========================================== */
+#works {
+  padding-top: 120px;
+}
+
+.card-works {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 80px;
+}
+
+.works-container {
+  width: 320px;
+}
+
+.works-img-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden; 
+}
+
+.works-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+  display: block;
+}
+
+/* ホバーしたら写真がぐっとよる */
+.works-container:hover img {
+  transform: scale(1.1);
+}
+
+.categoly {
+  margin-top: 13px;
+  font-size: 12px;
+  font-weight: lighter;
+}
+
+.description {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* ページネーションドット */
+.carousel {}
+
+/* ==========================================
+   カンパニーエリア
+========================================== */
+#company {
+  margin-top: 100px;
+  padding-top: 120px;
+  padding-bottom: 100px;
+  background-image:
+  linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)),
+  url(../images/company-bg.jpeg);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.company-section {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.cta-area {
+  width: 75%;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-around;
+  gap: 200px;
+}
+
+button.access-btn,
+button.companyprofile-btn {
+  width: 30%;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #4A3B32;
+  background-color: #F3EFE7;
+  border: 1px solid #4A3B32;
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px 30px;
+  position: relative;
+}
+
+.access-btn::after,
+.companyprofile-btn::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 80px;
+  height: 1px;
+  background-color: #4A3B32;
+  transition: transform 0.4s ease;
+}
+
+.access-btn:hover::after,
+.companyprofile-btn:hover::after {
+  transform: translateX(10px);
+}
+
+/* ==========================================
+   コンタクトエリア
+========================================== */
+#contact {
+  padding-top: 140px;
+}
+
+.contact-section {
+  width: 75%;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-area {
+  width: 40%;
+}
+
+.shop-image {
+  width: 50%;
+}
+
+.shop-image img {
+  width: 90%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.faq {
+  margin-top: 80px;
+}
+
+button.faq-btn {
+  width: 60%;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #426D7A;
+  border: 1px solid #426D7A;
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px 30px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.faq-btn::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 80px;
+  height: 1px;
+  background-color: #426D7A;
+  transition: transform 0.4s ease;
+}
+
+.faq-btn:hover::after {
+  transform: translateX(10px);
+}
+
+.contact-text {
+  margin-top: 30px;
+}
+
+.date {
+  font-size: 24px;
+  font-family: "avenir-lt-pro", sans-serif;
+}
+
+table.tel-area {
+  margin-top: 40px;
+}
+
+.tel-area th {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 40px;
+  text-align: left;
+  padding-right: 30px;
+}
+
+.tel-area td {
+  display: flex;
+  font-family: "avenir-lt-pro", sans-serif;
+  letter-spacing: 0.08em;
+  font-weight: lighter;
+  align-items: end;
+}
+
+.tel-number {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.td-small {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.shop-ritto {
+  padding-top: 30px;
+}
+
+
+/* SP対応（画面幅 768px 以下） */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .fv-subtitle {
+    font-size: 15px;
+  }
+
+  /* スクロールダウンのやつ */
+  .scroll-indicator {
+    right: 8%; /* PCの12.5%だと画面端に寄りすぎるので調整 */
+    gap: 10px; /* PCの15pxより少し詰める */
+  }
+
+  .scroll-text {
+    font-size: 10px; /* PCの14pxから縮小 */
+  }
+
+  .scroll-line {
+    height: 70px; /* PCの120pxから縮小 */
+  }
+
+  .scroll-dot {
+    width: 6px; /* PCの8pxから縮小 */
+    height: 6px;
+  }
+
+  /* コンセプトエリア */
+  #concept {
+    padding-top: 100px;
+  }
+
+  .concept-container {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+  }
+
+  .concept-area  { order: 1; }
+  .vm-btn        { order: 2; }
+
+  .vm-btn {
+    margin: 40px auto;
+  }
+
+  .concept-area {
+    flex-direction: column-reverse;
+    gap: 40px;
+  }
+
+  .concept-text {
+    width: 100%;
+  }
+
+  /* サービスエリア */
+  #service {
+    margin-top: 80px;
+    padding-top: 80px;
+    padding-bottom: 100px;
+  }
+
+  .title-container {
+    flex-direction: column;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  p.title-detail {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  h3.service-title {
+    font-style: 24px;
+  }
+
+  .servise-type-wrap {
+    margin: 60px auto;
+    width: 85%;
+  }
+
+  .servise-type {
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    animation: none;
+    margin-top: 0px;
+  }
+
+  .card-servicetype {
+    flex-shrink: 1;
+    width: 100%;
+  }
+
+  .card-servicetype img {
+    width: 100%;
+    height: 200px; /* PCの500pxより低めに調整 */
+  }
+
+  .card-line {
+    margin: 15px auto;
+  }
+
+  .duplicate {
+    display: none;
+  }
+
+  /* ワークスエリア */
+  #works {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  .card-works {
+    margin-top: 40px;
+  }
+
+  /* カンパニーエリア */
+  #company {
+    padding-top: 100px;
+  }
+
+  .cta-area {
+    margin: 40px auto;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  button.access-btn, 
+  button.companyprofile-btn {
+    width: 100%;
+  }
+
+  /* コンタクトエリア */
+  #contact {
+    padding-top: 100px;
+  }
+
+  .contact-section {
+    width: 85%;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .contact-area {
+    width: 100%;
+  }
+
+  .sp-only { 
+    display: block;
+    margin: 40px auto;
+    width: 100%;
+  }
+  .pc-only { display: none; }
+
+  .faq {
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  button.faq-btn {
+    margin: 30px auto;
+    display: block;
+  }
+
+  .sp-only img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .tel-area,
+  .shop-ritto {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .tel-area tr,
+  .shop-ritto tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #4A3B32;
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+
+  .tel-area th,
+  .shop-ritto th {
+    font-size: 20px;
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .tel-area td,
+  .shop-ritto td {
+    display: block; /* PCのdisplay:flexを解除 */
+  }
+
+  .tel-area td:first-child,
+  .shop-ritto td:first-child {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .tel-number {
+    font-size: 22px;
+  }
+
+  .td-small {
+    margin-top: 8px;
+    display: block;
+  }
+
+  .shop-ritto {
+    padding-top: 0; /* PC用の余白を解除 */
+  }
+}

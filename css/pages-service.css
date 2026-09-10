@@ -1,0 +1,566 @@
+@charset "UTF-8";
+
+/* 背景色(CONCEPTページ全体) */
+body {
+  background-color: #F3EFE7;
+}
+
+h3 {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  font-size: 32px;
+  color: #4A3B32;
+  font-weight: bold;
+}
+
+/* ==========================================
+  サイドバー
+========================================== */
+.service-layout {
+  display: flex;
+  gap: 90px;
+  width: 75%;
+  margin: 80px auto;
+}
+
+.side-nav {
+  width: 200px;
+  position: sticky; /* スクロールしてもサイドナビが画面内に留まる */
+  top: 120px;
+  align-self: flex-start;
+}
+
+.side-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-nav li {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  letter-spacing: 0.15em;
+}
+
+
+.side-nav-link {
+  position: relative;
+  padding-left: 20px;
+  color: #292929;
+  text-decoration: none;
+}
+
+/* ●のドット部分 */
+.side-nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc; /* 通常時は薄いグレー */
+  transition: background-color 0.3s ease;
+}
+
+/* 現在地(アクティブ)の時 */
+.side-nav-link.is-active::before {
+  background-color: #4A3B32; 
+}
+
+.service-content {
+  flex: 1;
+}
+
+.service-block {
+  padding-top: 100px;
+  margin-top: -100px; /* stickyヘッダーに隠れないよう調整 */
+}
+
+/* ==========================================
+  サービスエリア
+========================================== */
+.service {
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+
+.service-content {
+  display: flex;
+  flex-direction: column;
+  gap: 100px; 
+}
+
+.service-block {
+
+}
+
+.title-area {
+  display: flex;
+  gap: 100px;
+  margin-top: 40px;
+  align-items: center;
+}
+
+.service-block img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-top: 40px;
+}
+
+.menu-block {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.menu {
+  border: 1px solid #426D7A;
+  color: #426D7A;
+  padding: 10px 20px;
+}
+
+.menu-list {
+  color: #426D7A;
+}
+
+.service-text {
+  margin-top: 40px;
+}
+
+
+
+/* ==========================================
+よくある質問エリア
+========================================== */
+.faq-layout {
+  display: flex;
+  gap: 60px;
+  width: 75%;
+  margin: 0 auto;
+  padding-top: 140px;
+}
+
+.side-nav {
+  width: 180px;
+  position: sticky;
+  top: 120px;
+  align-self: flex-start;
+}
+
+.side-nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.side-nav-link {
+  position: relative;
+  padding-left: 20px;
+  color: #292929;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.side-nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #ccc;
+  transition: background-color 0.3s ease;
+}
+
+.side-nav-link.is-active::before {
+  background-color: #4A3B32;
+}
+
+.faq-content {
+  flex: 1;
+}
+
+.faq-page-title {
+  text-align: center;
+  margin-bottom: 80px;
+  color: #4A3B32;
+}
+
+button.faq-question {
+  display: flex;
+  gap: 30px;
+  margin: 15px;
+  align-items: center;
+  position: relative;
+}
+    
+
+.faq-group {
+  padding-top: 100px;
+  margin-top: -100px; /* stickyの位置ズレ防止 */
+}
+
+.faq-q-icon {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  color: #426D7A;
+  border: 1px solid #426D7A;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  position: relative;
+}
+
+.faq-q-text {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 20px;
+}
+
+.faq-toggle-icon {
+  flex-shrink: 0;
+  font-size: 24px;
+  color: #B9684E;
+  transition: transform 0.4s ease;
+}
+
+.faq-item.is-open .faq-toggle-icon {
+  transform: rotate(135deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.faq-item.is-open .faq-answer {
+  max-height: 300px;
+}
+
+.faq-answer-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  padding-bottom: 30px;
+  padding-left: 150px;
+  position: relative;
+}
+
+.faq-a-icon {
+  flex-shrink: 0;
+  width: 45px;
+  height: 45px;
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  color: #F3EFE7;
+  background-color: #426D7A;
+  display: flex;
+  border-radius: 5px;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.faq-answer-inner p {
+  flex: 1;
+  line-height: 1.8;
+}
+
+/* QとAをつなぐ線 */
+/* 縦線 */
+.faq-q-icon::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Qの箱のすぐ下から */
+  left: 50%;
+  width: 2px;
+  height: 0px;
+  background-color: #426D7A;
+  transition: height 0.4s ease;
+}
+
+/* 横線 */
+.faq-answer-inner::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 38px;
+  width: 0px;
+  height: 2px;
+  background-color: #426D7A;
+  transition: width 0.3s ease 0.4s; /* 0.4s遅れて開始(縦線が伸びきった後) */
+}
+
+/* 開閉時の動き */
+/* 開いたら、縦線が伸びる */
+.faq-item.is-open .faq-q-icon::after {
+  height: 40px;
+}
+
+.faq-item.is-open .faq-answer-inner::before {
+  width: 115px;
+}
+
+
+/* ==========================================
+  コンタクトエリア
+========================================== */
+#contact {
+  padding-top: 120px;
+}
+
+.contact-section {
+  width: 75%;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-area {
+  width: 40%;
+}
+
+.shop-image {
+  width: 50%;
+}
+
+.shop-image img {
+  width: 90%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.faq {
+  margin-top: 80px;
+}
+
+button.faq-btn {
+  width: 60%;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #426D7A;
+  border: 1px solid #426D7A;
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px 30px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.faq-btn::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 80px;
+  height: 1px;
+  background-color: #426D7A;
+  transition: transform 0.4s ease;
+}
+
+.faq-btn:hover::after {
+  transform: translateX(10px);
+}
+
+.contact-text {
+  margin-top: 30px;
+}
+
+.date {
+  font-size: 24px;
+  font-family: "avenir-lt-pro", sans-serif;
+}
+
+table.tel-area {
+  margin-top: 40px;
+}
+
+.tel-area th {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 40px;
+  text-align: left;
+  padding-right: 30px;
+}
+
+.tel-area td {
+  display: flex;
+  font-family: "avenir-lt-pro", sans-serif;
+  letter-spacing: 0.08em;
+  font-weight: lighter;
+  align-items: end;
+}
+
+.tel-number {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.td-small {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.shop-ritto {
+  padding-top: 30px;
+}
+
+
+/* SP対応（画面幅 768px 以下） */
+@media (max-width: 768px) {
+  .side-nav {
+    display: none;
+  }
+
+  .service {
+    width: 85%;
+  }
+
+  .service-layout {
+    margin-top: 40px;
+    width: 85%;
+  }
+
+  .service-block {
+    padding-top: 60px;
+  }
+
+  .title-area {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .service-block img {
+    margin-top: 20px;
+  }
+
+  .menu-block {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .service-text {
+    margin-top: 20px;
+  }
+
+  /* よくある質問 */
+  .faq-layout {
+    padding-top: 0px;
+    width: 85%;
+  }
+
+  .faq-page-title {
+    margin-bottom: 40px;
+    text-align: left;
+  }
+
+  .faq-question{
+    text-align: left;
+  }
+
+  .faq-item.is-open .faq-q-icon::after {
+  height: 48px;
+  }
+  
+  /* コンタクトエリア */
+  #contact {
+    padding-top: 100px;
+  }
+
+  .contact-section {
+    width: 85%;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .contact-area {
+    width: 100%;
+  }
+
+  .sp-only { 
+    display: block;
+    margin: 40px auto;
+    width: 100%;
+  }
+  .pc-only { display: none; }
+
+  .faq {
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  button.faq-btn {
+    margin: 30px auto;
+    display: block;
+  }
+
+  .sp-only img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .tel-area,
+  .shop-ritto {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .tel-area tr,
+  .shop-ritto tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #4A3B32;
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+
+  .tel-area th,
+  .shop-ritto th {
+    font-size: 20px;
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .tel-area td,
+  .shop-ritto td {
+    display: block; /* PCのdisplay:flexを解除 */
+  }
+
+  .tel-area td:first-child,
+  .shop-ritto td:first-child {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .tel-number {
+    font-size: 22px;
+  }
+
+  .td-small {
+    margin-top: 8px;
+    display: block;
+  }
+
+  .shop-ritto {
+    padding-top: 0; /* PC用の余白を解除 */
+  }
+}

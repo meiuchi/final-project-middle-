@@ -1,0 +1,379 @@
+@charset "UTF-8";
+
+/* 背景色(CONCEPTページ全体) */
+body {
+  background-color: #F3EFE7;
+}
+
+h3 {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+}
+
+/* ==========================================
+   コンセプトエリア
+========================================== */
+#concept {
+  padding-top: 80px;
+  z-index: 2;
+}
+
+.concept-container {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.concept-mainvisual {
+  display: flex;
+  padding-top: 80px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 150px; /* concept-textがはみ出す分を確保 */
+}
+
+.concept-photo {
+  width: 75%;
+  height: auto;
+}
+
+.concept-photo img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.concept-text {
+  background-color: #fff;
+  width: 45%;
+  padding: 30px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+}
+
+.concept-title {
+  font-family: "Shippori Mincho", serif;
+}
+
+.concept-description {
+  margin-top: 30px;
+}
+
+.highlight-text {
+  font-family: "Shippori Mincho", serif;
+  font-size: 24px;
+  line-height: 2;
+  background: linear-gradient(90deg, #4A3B32 0%, #B08C77 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================
+   ポイントエリア(３つの強み)
+========================================== */
+.concept-point3 {
+  width: 75%;
+  padding-top: 80px;
+  margin: 0 auto;
+}
+
+span.highlight-3 {
+  font-size: 50px;
+  color: #B9684E;
+  letter-spacing: 0.08em;
+}
+
+.point-container {
+  margin-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+}
+
+.card-01,
+.card-03 {
+  display: flex;
+  flex-direction: row;
+  gap: 80px;
+}
+
+.card-02 {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.point-textarea {
+  width: 100%;
+}
+
+.title {
+  background: linear-gradient(90deg, #4A3B32 0%, #B08C77 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.description {
+  margin-top: 30px;
+}
+
+.point-photoarea {
+  width: 100%;
+  position: relative;
+}
+
+.number {
+  width: 40%;
+  object-fit: cover;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+}
+
+.point-photo {
+  width: 70%;
+  border-radius: 50%;
+  object-fit: cover; /* 正方形じゃない画像でも歪まずに丸く切り抜く */
+  aspect-ratio: 1 / 1; /* 縦横比を1:1(正方形)に強制する */
+  position: absolute;
+  z-index: 3;
+}
+
+.no2 {
+  right: 40px;
+}
+
+/* ==========================================
+   コンタクトエリア
+========================================== */
+#contact {
+  padding-top: 120px;
+}
+
+.contact-section {
+  width: 75%;
+  margin: 80px auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-area {
+  width: 40%;
+}
+
+.shop-image {
+  width: 50%;
+}
+
+.shop-image img {
+  width: 90%;
+  height: 700px;
+  object-fit: cover;
+}
+
+.faq {
+  margin-top: 80px;
+}
+
+button.faq-btn {
+  width: 60%;
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  color: #426D7A;
+  border: 1px solid #426D7A;
+  border-radius: 40px;
+  text-align: center;
+  padding: 10px 30px;
+  margin-top: 30px;
+  position: relative;
+}
+
+.faq-btn::after {
+  content: "";
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  width: 80px;
+  height: 1px;
+  background-color: #426D7A;
+  transition: transform 0.4s ease;
+}
+
+.faq-btn:hover::after {
+  transform: translateX(10px);
+}
+
+.contact-text {
+  margin-top: 30px;
+}
+
+.date {
+  font-size: 24px;
+  font-family: "avenir-lt-pro", sans-serif;
+}
+
+table.tel-area {
+  margin-top: 40px;
+}
+
+.tel-area th {
+  font-family: "hiragino-kaku-gothic-pron", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  margin-bottom: 40px;
+  text-align: left;
+  padding-right: 30px;
+}
+
+.tel-area td {
+  display: flex;
+  font-family: "avenir-lt-pro", sans-serif;
+  letter-spacing: 0.08em;
+  font-weight: lighter;
+  align-items: end;
+}
+
+.tel-number {
+  font-size: 24px;
+  font-weight: bold;
+  padding-left: 15px;
+}
+
+.td-small {
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.shop-ritto {
+  padding-top: 30px;
+}
+
+
+/* SP対応（画面幅 768px 以下） */
+@media (max-width: 768px) {
+  /* コンセプトエリア */
+  .concept-mainvisual {
+    padding-top: 60px;
+    width: 100%;
+    flex-direction: column;
+    padding-bottom: 100px; /* SP用のはみ出し量を確保 */
+  }
+
+  .concept-photo {
+    width: 100%;
+  }
+
+  .concept-text {
+    width: 65%;
+    top: 70%;
+    right: 20%;
+  }
+
+  /* ポイントエリア */
+  .concept-point3 {
+    padding-top: 60px;
+  }
+
+  .card-01,
+  .card-02,
+  .card-03 {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .point-container {
+    margin-top: 30px;
+  }
+
+  .point-photoarea {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* 幅と同じ分だけ高さを確保する */
+  }
+
+  /* コンタクトエリア */
+  #contact {
+    padding-top: 100px;
+  }
+
+  .contact-section {
+    width: 85%;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .contact-area {
+    width: 100%;
+  }
+
+  .sp-only { 
+    display: block;
+    margin: 40px auto;
+    width: 100%;
+  }
+  .pc-only { display: none; }
+
+  .faq {
+    width: 100%;
+    margin-top: 60px;
+  }
+
+  button.faq-btn {
+    margin: 30px auto;
+    display: block;
+  }
+
+  .sp-only img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .tel-area,
+  .shop-ritto {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .tel-area tr,
+  .shop-ritto tr {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #4A3B32;
+    padding: 25px;
+    margin-bottom: 20px;
+  }
+
+  .tel-area th,
+  .shop-ritto th {
+    font-size: 20px;
+    text-align: left;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .tel-area td,
+  .shop-ritto td {
+    display: block; /* PCのdisplay:flexを解除 */
+  }
+
+  .tel-area td:first-child,
+  .shop-ritto td:first-child {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+
+  .tel-number {
+    font-size: 22px;
+  }
+
+  .td-small {
+    margin-top: 8px;
+    display: block;
+  }
+
+  .shop-ritto {
+    padding-top: 0; /* PC用の余白を解除 */
+  }
+}
