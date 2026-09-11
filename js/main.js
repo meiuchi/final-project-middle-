@@ -73,17 +73,29 @@ faqItems.forEach(item => {
   });
 });
 
-// サイドナビ:スクロールでアクティブ切り替え(SERVICEページ・FAQページ共通)
+
+// サイドナビ:スクロールでアクティブ切り替え(SERVICE・FAQ・WORKS共通)
 const sideLinks = document.querySelectorAll('.side-nav-link');
-const sideNavTargets = document.querySelectorAll('.faq-group, .service-block');
+const sideNavTargets = document.querySelectorAll('.faq-group, .service-block, .works-container01');
 
 if (sideLinks.length > 0 && sideNavTargets.length > 0) {
   const sideNavObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      const id = entry.target.getAttribute('id');
-      const correspondingLink = document.querySelector(`.side-nav-link[href="#${id}"]`);
+      if (!entry.isIntersecting) return;
 
-      if (entry.isIntersecting && correspondingLink) {
+      let correspondingLink = null;
+
+      // WORKSページ:data-categoryで紐付け
+      if (entry.target.hasAttribute('data-category')) {
+        const category = entry.target.getAttribute('data-category');
+        correspondingLink = document.querySelector(`.side-nav-link[data-category="${category}"]`);
+      } else {
+        // SERVICE・FAQページ:idで紐付け(今まで通り)
+        const id = entry.target.getAttribute('id');
+        correspondingLink = document.querySelector(`.side-nav-link[href="#${id}"]`);
+      }
+
+      if (correspondingLink) {
         sideLinks.forEach(link => link.classList.remove('is-active'));
         correspondingLink.classList.add('is-active');
       }
@@ -94,3 +106,4 @@ if (sideLinks.length > 0 && sideNavTargets.length > 0) {
 
   sideNavTargets.forEach(target => sideNavObserver.observe(target));
 }
+

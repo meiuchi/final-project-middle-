@@ -49,16 +49,16 @@
   <!-- ヘッターエリア -->
   <header id="head">
     <div class="logo">
-      <img src="../images/logo.png" alt="ロゴ">
+      <a href="../"><img src="../images/logo.png" alt="ロゴ"></a>
     </div>
 
     <nav class="area-nav">
       <ul class="nav-list">
-        <li><a class="hov-animation" href="#concept">CONCEPT</a></li>
-        <li><a class="hov-animation" href="#service">SERVICE</a></li>
-        <li><a class="hov-animation" href="#works">WORKS</a></li>
-        <li><a class="hov-animation" href="#company">COMPANY</a></li>
-        <li><a class="hov-animation" href="#contact">CONTACT</a></li>
+        <li><a class="hov-animation" href="../concept/">CONCEPT</a></li>
+        <li><a class="hov-animation" href="../service/">SERVICE</a></li>
+        <li><a class="hov-animation" href="../works/">WORKS</a></li>
+        <li><a class="hov-animation" href="../company/">COMPANY</a></li>
+        <li><a class="hov-animation" href="../#contact">CONTACT</a></li>
       </ul>
     </nav>
 
@@ -73,10 +73,10 @@
     <div class="hamburger-navigation">
       <div class="navigation-wrap">
         <ul class="nav-list-sp">
-          <li><a href="#concept">CONCEPT <span class="nav-ja">私たちについて</span></a></li>
-          <li><a href="#service">SERVICE <span class="nav-ja">事業案内</span></a></li>
-          <li><a href="#works">WORKS <span class="nav-ja">施工実績</span></a></li>
-          <li><a href="#company">COMPANY <span class="nav-ja">会社について</span></a></li>
+          <li><a href="../concept/">CONCEPT <span class="nav-ja">私たちについて</span></a></li>
+          <li><a href="../service/">SERVICE <span class="nav-ja">事業案内</span></a></li>
+          <li><a href="../works/">WORKS <span class="nav-ja">施工実績</span></a></li>
+          <li><a href="../company/">COMPANY <span class="nav-ja">会社について</span></a></li>
         </ul>
         <span class="nav-line"></span>
         <div class="btn-area-sp">
@@ -86,12 +86,12 @@
           </button>
 
           <button class="line-btn-sp">
-            <a href="#"><img src="../images/line-icon-white.png" alt="LINEアイコン">
+            <a href="https://line.me/R/ti/p/@jmf2838f?oat_content=url&ts=09101642" target="_blank" rel="noopener noreferrer"><img src="../images/line-icon-white.png" alt="LINEアイコン">
             LINEで相談</a>
           </button>
         </div>
         <div class="sns-icon">
-          <a href="https://www.instagram.com/body_fight_japan/" target="_blank"><img src="../images/ig-icon.png" alt="instagram">
+          <a href="https://www.instagram.com/body_fight_japan/" target="_blank" rel="noopener noreferrer"><img src="../images/ig-icon.png" alt="instagram">
           <p class="instagram-text">Follow me !</p></a>
         </div>
       </div>
@@ -107,7 +107,7 @@
     </button>
 
     <button class="line-btn">
-      <a href="#"><img src="../images/line-icon.png" alt="LINEアイコン">
+      <a href="https://line.me/R/ti/p/@jmf2838f?oat_content=url&ts=09101642" target="_blank" rel="noopener noreferrer"><img src="../images/line-icon.png" alt="LINEアイコン">
       LINEで相談</a>
     </button>
   </div>
@@ -123,21 +123,72 @@
   </div>
 
   <div class="service-layout">
-    <!-- サイドナビ -->
+    <!-- サイドナビ:カテゴリごとに色を指定 -->
     <nav class="side-nav">
       <ul>
-        <li><a href="#menu01" class="side-nav-link">車検・整備</a></li>
-        <li><a href="#menu02" class="side-nav-link">鈑金塗装</a></li>
-        <li><a href="#menu03" class="side-nav-link">中古車販売</a></li>
-        <li><a href="#menu04" class="side-nav-link">カスタムカー</a></li>
-        <li><a href="#menu05" class="side-nav-link">ライフスタイルカー</a></li>
+        <li><a href="#work-01" class="side-nav-link" data-category="inspection">車検・整備</a></li>
+        <li><a href="#work-02" class="side-nav-link" data-category="bodywork">鈑金塗装</a></li>
+        <li><a href="#work-03" class="side-nav-link" data-category="used-car">中古車販売</a></li>
+        <li><a href="#work-04" class="side-nav-link" data-category="custom">カスタムカー</a></li>
+        <li><a href="#work-05" class="side-nav-link" data-category="lifestyle">ライフスタイルカー</a></li>
       </ul>
     </nav>
-  
-
 
     <!--右側のエリア -->
+    <div class="works-container01" data-category="bodywork">
+      <div class="works-title">
+        <h3>タイトルタイトル</h3>
+        <div class="date-container">
+          <div class="works-date">
+            <p class="date-title">Date</p>
+            <p class="date">2026.4.22</p>
+          </div>
+          <div class="works-categoly">
+            <p class="categoly-title">Categoly</p>
+            <p class="categoly-kinds">鈑金塗装</p>
+          </div>
+        </div>
+      </div>
 
+      <div class="works-ba">
+        <div class="before fade-up">
+          <img src="../images/before.png" alt="before" class="before-icon">
+          <img src="../images/inspe.jpeg" alt="施工前写真" class="before-photo">
+        </div>
+        <div class="after fade-up">
+          <img src="../images/After.png" alt="after" class="after-icon">
+          <img src="../images/concept-image.jpg" alt="完成写真" class="after-photo">
+        </div>
+      </div>
+
+      <div class="carmodel-container fade-up">
+        <div class="carmodel-manu">
+            <p class="manu-title">メーカー</p>
+            <p class="manu-kinds">ニッサン</p>
+        </div>
+        <div class="carmodel-kinds">
+            <p class="kinds-title">車種</p>
+            <p class="kinds-kinds">ラシーン</p>
+        </div>
+        <div class="carmodel-period">
+            <p class="period-title">施工期間</p>
+            <p class="period-kinds">１ヶ月</p>
+        </div>
+      </div>
+
+      <div class="works-text">
+        <h3 class="fade-up">見出し見出し</h3>
+        <p class="p-works-text fade-up">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+      </div>
+
+      <div class="process-image">
+        <img src="../images/working process.png" alt="process-icon" class="process-icon fade-up">
+        <img src="../images/custom.webp" alt="カスタム中写真" class="fade-up">
+        <img src="../images/custom2.webp" alt="カスタム中写真" class="fade-up">
+      </div>
+    </div>
+  </div>
+    
 
   
   <!-- コンタクトエリア -->
@@ -152,7 +203,7 @@
 
         <div class="faq fade-up">
           <p class="faq-text">よくあるご質問をまとめております。お問合せの前にご一読ください。</p>
-          <button class="faq-btn">よくあるご質問</button>
+          <button class="faq-btn"><a href="../service/#faq">よくあるご質問</a></button>
         </div>
 
         <!-- SP専用:faqの下に表示 -->
@@ -189,24 +240,29 @@
   
 
   <!--フッターエリア -->
-  <footer id="foot">
+  <div class="foot-wave">
+    <svg viewBox="0 0 1440 100" fill="none" xmlns="http://www.w3.org/2000/svg" class="wave-svg">
+      <path d="M0 73.3145C748.543 72.2345 1099.8 -91.1017 1443 73.3145V321.314H0V73.3145Z" fill="#4A3B32"/>
+    </svg>
     <div class="car-icon">
       <img src="../images/car2.png" alt="車アイコン">
     </div>
+  </div>
 
+  <footer id="foot">
     <div class="main-area">
       <div class="logo-foot">
-        <img src="../images/logo.png" alt="ロゴ">
+        <a href="../"><img src="../images/logo.png" alt="ロゴ"></a>
       </div>
       
       <div class="access-area">
         <p class="access">
           株式会社　ボディーファイトジャパン <br>
-          本社　京都府京都市伏見区小栗栖岩ヶ渕町30番地 <br>
+          本社<br class="sp-br">京都府京都市伏見区小栗栖岩ヶ渕町30番地 <br>
           TEL　075-573-6181
         </p>
         <div class="ig-area">
-          <a href="https://www.instagram.com/body_fight_japan/" target="_blank"><img src="../images/ig-icon.png" alt="instagram">
+          <a href="https://www.instagram.com/body_fight_japan/" target="_blank" rel="noopener noreferrer"><img src="../images/ig-icon.png" alt="instagram">
           <p class="instagram-text">Follow me !</p></a>
         </div>
       </div>
@@ -215,26 +271,26 @@
         <p class="site-title">SITE MAP</p>
         <table class="sitemap-list">
           <tr>
-            <th><a href="#concept">コンセプト</a></th>
-            <td><a href="#">会社概要</a></td>
+            <th><a href="../concept/">コンセプト</a></th>
+            <td><a href="../works/">会社概要</a></td>
           </tr>
           <tr>
-            <th><a href="#service">事業案内</a></th>
-            <td><a href="#">店舗アクセス</a></td>
+            <th><a href="../service/">事業案内</a></th>
+            <td><a href="../company/#access-block">店舗アクセス</a></td>
           </tr>
           <tr>
-            <th><a href="#works">施工実績</a></th>
-            <td><a href="#">よくあるご質問</a></td>
+            <th><a href="../works/">施工実績</a></th>
+            <td><a href="../service/#faq">よくあるご質問</a></td>
           </tr>
           <tr>
-            <th><a href="#">会社案内</a></th>
-            <td><a href="#" target="_blank">プライバシーポリシー</a></td>
+            <th><a href="../company/#company-block">会社案内</a></th>
+            <td><a href="#" target="_blank" rel="noopener noreferrer">プライバシーポリシー</a></td>
           </tr>
         </table>
       </div>
     </div>
 
-    <div class="credit">Copyright ©  BODYFIGHTJAPAN inc.,ltd all right reserved.</div>
+    <div class="credit">Copyright © BODY FIGHT JAPAN inc., ltd. All rights reserved.</div>
   </footer>
 
   <script src="../js/main.js"></script>

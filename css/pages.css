@@ -172,9 +172,6 @@ button.vm-btn {
   border: 1px solid #426D7A;
   padding: 10px 25px;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 8px;
   margin-left: auto;
 }
 
@@ -182,6 +179,12 @@ button.vm-btn {
   width: 60px;
   object-fit: cover;
   transition: transform 0.3s ease;
+}
+
+.vm-btn a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 /* ホバーしたら車動く */
@@ -303,7 +306,7 @@ p.svc {
 }
 
 .card-text {
-  width: 60%;
+  width: 70%;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -477,7 +480,7 @@ button.companyprofile-btn {
 }
 
 button.faq-btn {
-  width: 60%;
+  width: 70%;
   font-size: 20px;
   letter-spacing: 0.1em;
   color: #426D7A;
@@ -626,7 +629,7 @@ table.tel-area {
   }
 
   h3.service-title {
-    font-style: 24px;
+    font-size: 28px;
   }
 
   .servise-type-wrap {

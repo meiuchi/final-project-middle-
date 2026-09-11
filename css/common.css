@@ -201,25 +201,38 @@ button.line-btn:hover img {
 /* ==========================================
    フッターエリア
 ========================================== */
-#foot {
+.foot-wave {
+  position: relative;
   width: 100%;
   margin-top: 140px;
-  padding-top: 80px;
-  background-image: url(../images/footerBG.png);
-  background-size: cover;
-  position: relative;
+  margin-bottom: -5px;
+}
+
+.wave-svg {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 .car-icon {
-  width: 100px;
   position: absolute;
-  top: -6%;
-  left: 50%;
+  top: -10%;
+  left: 58%;
+  transform: translate(-50%, -50%);
+  width: 100px;
 }
 
 .car-icon img {
   width: 100%;
   object-fit: cover;
+}
+
+
+#foot {
+  width: 100%;
+  padding-top: 1px;
+  position: relative;
+  background-color: #4A3B32;
 }
 
 .main-area {
@@ -356,6 +369,11 @@ p.site-title {
 
 .sp-only { display: none; }
 .pc-only { display: block; }
+
+/* PCでは改行を無効化 */
+br.sp-br {
+  display: none;
+}
 
 
 /* SP対応（画面幅 768px 以下） */
@@ -498,11 +516,11 @@ p.site-title {
 
   .cta-btn-sp,
   .line-btn-sp {
-    width: 80%;
+    width: 100%;
     color:#F3EFE7;
     border-radius: 5px;
     border: 1px solid #F3EFE7;
-    padding: 10px 40px;
+    padding: 10px 30px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -582,12 +600,8 @@ p.site-title {
   }
 
   /* フッターエリア */
-  #foot {
+  .foot-wave {
     margin-top: 100px;
-  }
-
-  .car-icon {
-    top: -1%;
   }
 
   .site-map,
@@ -595,4 +609,12 @@ p.site-title {
   .logo-foot {
     display: none;
   }
+
+  .main-area {
+    width: 85%;
+  }
+  br.sp-br {
+    display: block;
+  }
+
 }
