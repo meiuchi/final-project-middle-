@@ -35,8 +35,9 @@ h3 {
   
 
 .contactform-lead {
-  margin-top: 30px;
   text-align: center;
+  width: 85%;
+  margin: 30px auto;
 }
 
 /* ==========================================
@@ -45,7 +46,7 @@ h3 {
 .Form {
   background-color: #fff;
   margin: 80px auto;
-  width: 70%;
+  width: 85%;
   padding: 50px 40px;
   font-family: "hiragino-kaku-gothic-pron", sans-serif;
 }
@@ -245,6 +246,7 @@ button, input, select, textarea {
   padding: 10px 20px;
   cursor: pointer;
   width: 100%;
+  margin-top: 18px;
 }
 
 .Form-Item-File {

@@ -41,7 +41,7 @@ h3 {
 
 p {
   font-family: "hiragino-kaku-gothic-pron", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   line-height: 1.7;
   letter-spacing: 0.1em;
 }
@@ -497,6 +497,10 @@ br.sp-br {
     font-size: 30px;
   }
 
+  br.pc-br {
+    display: none;
+  }
+
   /* ==========================================
     ハンバーガーボタン
   ========================================== */
@@ -707,6 +711,11 @@ br.sp-br {
     width: 18px;
   }
 
+  .logo img {
+    width: 60px;
+    margin-left: 20px;
+  }
+
   /* コンタクトエリア */
   #contact {
     padding-top: 100px;
@@ -738,6 +747,7 @@ br.sp-br {
     margin: 30px auto;
     display: block;
     font-size: 17px;
+    width: 80%;
   }
 
   .faq-btn::after {

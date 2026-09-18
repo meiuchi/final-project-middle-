@@ -453,10 +453,12 @@ button.companyprofile-btn {
 @media (max-width: 768px) {
   h1 {
     font-size: 32px;
+    width: 90%;
   }
 
   .fv-subtitle {
     font-size: 15px;
+    width: 85%;
   }
 
   /* スクロールダウンのやつ */
@@ -572,6 +574,10 @@ button.companyprofile-btn {
   /* カンパニーエリア */
   #company {
     padding-top: 100px;
+  }
+
+  .company-section {
+    width: 85%;
   }
 
   .cta-area {

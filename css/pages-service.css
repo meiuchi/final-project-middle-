@@ -253,7 +253,7 @@ button.faq-question {
   align-items: flex-start;
   gap: 30px;
   padding-bottom: 30px;
-  padding-left: 150px;
+  padding-left: 20%;
   position: relative;
 }
 
@@ -308,7 +308,7 @@ button.faq-question {
 }
 
 .faq-item.is-open .faq-answer-inner::before {
-  width: 115px;
+  width: 16%;
 }
 
 
@@ -470,14 +470,46 @@ table.tel-area {
     text-align: left;
   }
 
-  .faq-question{
+  button.faq-question{
     text-align: left;
-  }
-
-  .faq-item.is-open .faq-q-icon::after {
-  height: 48px;
+    gap: 15px;
   }
   
+
+  .faq-q-icon,
+  .faq-a-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
+
+  .faq-q-text {
+    font-size: 16px;
+  }
+
+  .faq-toggle-icon {
+    font-size: 20px;
+  }
+
+  .faq-answer-inner {
+    gap: 15px;
+  }
+
+  /* 開閉時の動き */
+  /* 開いたら、縦線が伸びる */
+  .faq-item.is-open .faq-q-icon::after {
+    height: 39px;
+  }
+
+  .faq-item.is-open .faq-answer-inner::before {
+    width: 12%;
+  }
+
+  .faq-answer-inner::before {
+    top: 15px;
+    left: 33px;
+  }
+
   /* コンタクトエリア */
   #contact {
     padding-top: 100px;
